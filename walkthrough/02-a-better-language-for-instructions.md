@@ -1,5 +1,6 @@
 # A better language for instructions
 
+<<<<<<< HEAD
 To understand a sentence, we need to break it down to words, so that's what we are going to do now.
 
 ```lisp
@@ -13,3 +14,6 @@ You will start with a number of failing tests in [`tokenizer.test.js`](../tokeni
 To turn a string into an array of characters, we can use the [`Array.from`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/from), and to create atoms we can use the [`Symbol.for`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol/for).
 
 Once the tests pass, you can move on to the [next step](03-using-a-dictionary.md), where we'll be forming a dictionary.
+=======
+You start with a number of failing tests that try to tokenize the input. The goal is to make the tests pass by implementing a simple parser.
+>>>>>>> 56b82a2 (:speech_baloon: a better language for instructions)

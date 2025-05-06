@@ -8,14 +8,6 @@ export { encodeWAV, generatePCM, tokenize };
 //   R: Sample rate (samples per second), typically 44100 Hz
 //   n: Sample number (integer), from 0 to R × duration − 1
 
-// sample[n]= A ⋅ sin(2 * π * f * (n / R)​)
-
-// Where:
-//   A: Amplitude (max value based on bit depth, e.g., 32767 for 16-bit)
-//   f: Frequency (Hz), e.g., middle C = 261.63 Hz
-//   R: Sample rate (samples per second), typically 44100 Hz
-//   n: Sample number (integer), from 0 to R × duration − 1
-
 function generatePCM(frequency, duration) {
   // throw new Error("Not implemented"),/
   const Amplitude = 32767;
@@ -69,8 +61,6 @@ async function encodeWAV(
     new Uint8Array(buffer),
   );
 }
-
-const atom = (name) => Symbol.for(name);
 
 const tokenize = (input) => {
   throw new Error("Not implemented");
