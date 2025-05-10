@@ -1,4 +1,4 @@
-export { encodeWAV, generatePCM, tokenize };
+export { encodeWAV, generatePCM, tokenize, typeify };
 
 // sample[n]= A ⋅ sin(2 * π * f * (n / R)​)
 
@@ -73,4 +73,14 @@ const tokenize = (input) => {
     }
     return atom(token);
   });
+};
+
+const run = (
+  program,
+  definitions = [],
+) => {
+  const tokens = tokenize(program);
+  const value = evaluate(tokens, definitions);
+
+  return value;
 };
