@@ -9,13 +9,12 @@ export { encodeWAV, generatePCM, tokenize };
 //   n: Sample number (integer), from 0 to R × duration − 1
 
 function generatePCM(frequency, duration) {
-  // throw new Error("Not implemented"),/
-  const Amplitude = 32767;
+  const amplitude = 32767;
   const sampleRate = 44100;
   const samples = [];
   for (let i = 0; i < duration / 1000 * sampleRate; i++) {
     samples.push(
-      Amplitude * Math.sin(2 * Math.PI * frequency * i / sampleRate),
+      amplitude * Math.sin(2 * Math.PI * frequency * i / sampleRate),
     );
   }
   return samples;
@@ -63,5 +62,15 @@ async function encodeWAV(
 }
 
 const tokenize = (input) => {
-  throw new Error("Not implemented");
+  if (input.trim() === "") {
+    return [];
+  }
+  const tokens = input.split(" ");
+  return tokens.map((token) => {
+    const num = parseFloat(token);
+    if (!isNaN(num)) {
+      return num;
+    }
+    return atom(token);
+  });
 };
